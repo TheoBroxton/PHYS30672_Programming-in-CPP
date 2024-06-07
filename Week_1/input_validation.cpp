@@ -1,5 +1,6 @@
 // Example: checking for valid input
 #include<iostream>
+#include <limits>
 int main()
 {
     int any_year;
@@ -12,6 +13,7 @@ int main()
         //Clear fail bit and ignore bad input
         std::cin.clear();
         std::cin.ignore();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cin>>any_year;
     }
     std::cout<<"C++ is the best programming language in "<<any_year<<"!"<<std::endl;
